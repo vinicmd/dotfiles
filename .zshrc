@@ -83,7 +83,6 @@ plugins=(
   zsh-autosuggestions
 )
 
-autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
