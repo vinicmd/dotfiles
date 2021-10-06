@@ -18,21 +18,11 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20B
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-if [ -f $zshrc]
-then
-    mv /home/$USER/.zshrc /home/$USER/.zshrc.bkp
+mv /home/$USER/.zshrc /home/$USER/.zshrc.bkp
 
-    cp ../.zshrc /home/$USER/
-else 
-    cp ../.zshrc /home/$USER/
-fi
+cp ../.zshrc /home/$USER/
 
-if [ -f $p10k]
-then
-    mv /home/$USER/.p10k.zsh /home/$USER/.p10k.zsh.bkp
-    cp ../.p10k.zsh /home/$USER/
-else 
-    cp ../.p10k.zsh /home/$USER/
-fi
+cp ../.p10k.zsh /home/$USER/
+
 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
