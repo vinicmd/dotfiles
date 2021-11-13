@@ -5,8 +5,7 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-beta.list'
 rm -f packages.microsoft.gpg
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg 
-sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -14,10 +13,26 @@ echo \
 sudo apt install apt-transport-https -y
 sudo apt update
 sudo apt install code git gnome-tweaks zsh tilix python3-nautilus flatpak microsoft-edge-beta docker.io curl -y
+
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 mkdir -p ~/Projects
 mkdir -p ~/Estudos
+mkdir -p /home/$USER/.config/tilix/schemes
+cp ./Dracula.json /home/$USER/.config/tilix/schemes
+
+mkdir /home/$USER/.fonts
+cd /home/$USER/.fonts
+
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf 
+
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf 
+
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf 
+
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf 
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 
 sudo systemctl enable --now docker
 sudo usermod -aG docker ${USER}
@@ -25,16 +40,4 @@ sudo chmod 777 /var/run/docker.sock
 
 sudo usermod --shell $(which zsh) $USER
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
-
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "###############################################"
-echo "########## --> That’s all folks! <-- ##########"
-echo "Restart computer for you? (y/n)"
-read restart_computer
-if echo "$restart_computer" | grep -iq "^y" ;then
-	sudo shutdown -r 0
-else
-	echo "Okay. Good work! :)"
-fi
