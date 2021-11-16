@@ -4,6 +4,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+flatpak --user override --filesystem=/home/$USER/.icons/:ro
+flatpak --user override --filesystem=/usr/share/icons/:ro
+
 mv /home/$USER/.zshrc /home/$USER/.zshrc.bkp
 cp .p10k.zsh /home/$USER/
 cp .zshrc /home/$USER/
