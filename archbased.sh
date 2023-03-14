@@ -1,16 +1,15 @@
-echo off
 sudo pacman-mirrors -c Brazil
 sudo pacman -Syyuu
 
 sudo pacman -S base-devel git && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
-yay -S microsoft-edge-stable visual-studio-code-bin jdk11-openjdk tilix flatpak htop exa bat docker wget curl 
+yay -S microsoft-edge-stable visual-studio-code-bin tilix flatpak htop exa bat docker wget curl copyq github-cli ostree appstream-glib
 
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-mkdir -p ~/Projects
-mkdir -p ~/Estudos
-mkdir -p /home/$USER/.config/tilix/schemes
+mkdir -p /home/$USER/Projects
+mkdir -p /home/$USER/Estudos
+mkdir -p /home/$USER/tmp
 
 mkdir /home/$USER/.fonts
 cd /home/$USER/.fonts
@@ -23,18 +22,33 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20I
 
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf 
 
+cd /home/$USER/
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 
-git config --global user.name 'Vinicius Duarte'
-git config --global user.email viniciusduarte@outlook.com
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
-echo '##### ALIAS #####' >> ~/.zshrc
-echo alias ls='exa --icons' >> ~/.zshrc
-echo alias l=ls -la >> ~/.zshrc
+cd /home/$USER/tmp
+git clone https://github.com/vinceliuice/Colloid-gtk-theme
+git clone https://github.com/vinceliuice/Colloid-icon-theme
+git clone https://github.com/refi64/stylepak
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+cd /home/$USER/tmp/Colloid-gtk-theme
+./install.sh --tweaks normal
+
+cd /home/$USER/tmp/stylepak
+./stylepak install-user Colloid-Dark
+
+cd /home/$USER/tmp/Colloid-icon-theme
+./install.sh
+
+cd /home/$USER/
+mv .zshrc .zshrc_bkp
+mv .gitconfig .gitconfig_bkp
+
+ln -s -f arch/.zshrc /home/$USER/
+ln -s -f arch/.gitconfig /home/$USER/
 
 git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
 
-echo '##### ASDF #####' >> ~/.zshrc
-echo '. /opt/asdf-vm/asdf.sh' >> ~/.zshrc
+reboot

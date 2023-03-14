@@ -9,26 +9,34 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+##### ALIAS #####
+alias "ls"="exa --icons"
+alias "l"="ls -la"
+alias 'cat'='bat'
+alias 'ips'='ip -c -br a'
+alias 'ports'='sudo netstat -tulanp'
+alias 'please'='sudo'
+
+alias 'push'='git push'
+alias 'commit'='git commit -m'
+alias 'pull'='git pull'
+alias 'add'='git add'
+alias 'add'='git add'
+alias 'merge'='git merge'
+alias 'status'='git status'
+alias 'checkout'='git checkout'
+
+
 ##### CONFIGS REACT NATIVE #####
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk 
 export ANDROID_HOME=~/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-##### ALIAS #####
-alias ls='exa --icons'
-alias l='ls -la'
-alias 'DEL /s /q /f'='rm -rF'
-alias 'ys'='yarn start'
-alias 'ysl'='yarn start:linux'
-alias 'gpl'='git pull'
-alias 'gph'='git push'
-alias 'gch'='git checkout'
-alias 'ya'='yarn android'
-alias 'ga'='git add'
-alias 'gst'='git status'
+export PATH=$PATH:~/android-studio/bin
+
+unsetopt nomatch
 
 ##### NVM #####
 export NVM_DIR="$HOME/.nvm"
@@ -37,3 +45,4 @@ export NVM_DIR="$HOME/.nvm"
 
 ##### ASDF #####
 . /opt/asdf-vm/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
