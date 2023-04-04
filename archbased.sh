@@ -1,6 +1,7 @@
 sudo pacman-mirrors -c Brazil
 sudo pacman -Syyuu
 
+cd ~
 sudo pacman -S base-devel git && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 yay -S microsoft-edge-stable visual-studio-code-bin tilix flatpak htop exa bat docker wget curl copyq github-cli ostree appstream-glib
@@ -42,12 +43,8 @@ cd /home/$USER/tmp/stylepak
 cd /home/$USER/tmp/Colloid-icon-theme
 ./install.sh
 
-cd /home/$USER/
-mv .zshrc .zshrc_bkp
-mv .gitconfig .gitconfig_bkp
-
-ln -s -f arch/.zshrc /home/$USER/
-ln -s -f arch/.gitconfig /home/$USER/
+rm -Rf ~/yay
+rm -Rf ~/tmp
 
 git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
 
