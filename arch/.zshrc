@@ -16,6 +16,8 @@ alias 'cat'='bat'
 alias 'ips'='ip -c -br a'
 alias 'ports'='sudo netstat -tulanp'
 alias 'please'='sudo'
+alias 'dotupdate'='cd ~/dotfiles && git pull'
+alias 'dotchange'='cd ~/dotfiles && git c "Add files to this" && git push'
 
 alias 'push'='git push'
 alias 'commit'='git commit -m'
