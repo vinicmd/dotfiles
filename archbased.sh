@@ -1,4 +1,4 @@
-sudo pacman-mirrors -c Brazil
+sudo pacman-mirrors -c United_Kingdom
 sudo pacman -Syyuu
 
 cd ~
@@ -47,5 +47,24 @@ rm -Rf ~/yay
 rm -Rf ~/tmp
 
 git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
+
+curl -sS https://starship.rs/install.sh | sh
+
+starship preset nerd-font-symbols -o ~/.config/starship.toml
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+if [ -e ~/.zshrc ]; then
+    rm ~/.zshrc
+fi
+
+gh auth login
+
+ln -s ~/dotfiles/arch/.zshrc ~/.zshrc
+ln -s ~/dotfiles/arch/.gitconfig ~/.gitconfig
 
 reboot
