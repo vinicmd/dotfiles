@@ -22,9 +22,29 @@ alias 'add'='git add .'
 alias 'merge'='git merge'
 alias 'status'='git status'
 alias 'checkout'='git checkout'
+alias 'tokei'='tokei --exclude pnpm-lock.yaml'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # [[ -s "/home/vinicius/.gvm/scripts/gvm" ]] && source "/home/vinicius/.gvm/scripts/gvm"
+
+source "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/home/vinicius/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# React Native configs
+
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
