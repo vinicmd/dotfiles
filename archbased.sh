@@ -62,9 +62,14 @@ if [ -e ~/.zshrc ]; then
     rm ~/.zshrc
 fi
 
+# alacritty theme
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+
 gh auth login
 
 ln -s ~/dotfiles/arch/.zshrc ~/.zshrc
 ln -s ~/dotfiles/arch/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/arch/.alacritty.toml ~/.alacritty.toml
 
 reboot
