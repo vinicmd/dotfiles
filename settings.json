@@ -1,0 +1,80 @@
+{
+    //Configs Workbench
+    "workbench.colorTheme": "Min Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.labelFormat": "short",
+    "extensions.ignoreRecommendations": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.tree.indent": 12,
+    "editor.semanticHighlighting.enabled": false,
+    "explorer.compactFolders": false,
+    "editor.minimap.enabled": false,
+    // "editor.scrollbar.horizontal": "hidden",
+    // "editor.scrollbar.vertical": "hidden",
+    "workbench.statusBar.visible": false,
+    "workbench.sideBar.location": "right",
+    //Terminal
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    //Estulo de fonte
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.highlightActiveIndentation": "always",
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "editor.tabSize": 2,
+    "editor.rulers": [80, 120],
+    "editor.stickyScroll.enabled": true,
+    "editor.linkedEditing": true,
+    "editor.renderWhitespace": "boundary",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    // Coisas do Material
+    "material-icon-theme.activeIconPack": "react",
+    "material-icon-theme.folders.color": "#607d8b",
+    "material-icon-theme.folders.associations": {
+      "main": "batch",
+      "infra": "app",
+      "protocol": "interface",
+      "protocols": "interface",
+      "entities": "class",
+      "schemas": "class",
+      "typeorm": "database",
+      "repositories": "mappings",
+      "http": "container",
+      "migrations": "tools",
+      "modules": "components",
+      "implementations": "core",
+      "dtos": "typescript",
+      "fakes": "mock",
+      "websockets": "pipe",
+      "photos": "pipe",
+      "grpc": "pipe",
+      "useCases": "Helper"
+    },
+    "material-icon-theme.files.associations": {
+      "env.ts": "tune"
+    },
+  
+    // Git
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    // Prettier, Eslint, Husky e afins
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    // Outros
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single",
+    "workbench.startupEditor": "none",
+    "git.openRepositoryInParentFolders": "always",
+    // "workbench.activityBar.location": "hidden",
+    "window.menuBarVisibility": "toggle",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "symbols.hidesExplorerArrows": false,
+    "update.showReleaseNotes": false
+  }
