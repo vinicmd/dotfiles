@@ -30,9 +30,9 @@ cd /home/$USER/
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
 cd /home/$USER/tmp
-git clone https://github.com/vinceliuice/Colloid-gtk-theme
-git clone https://github.com/vinceliuice/Colloid-icon-theme
-git clone https://github.com/refi64/stylepak
+git clone https://github.com/vinceliuice/Colloid-gtk-theme /home/$USER/tmp/Colloid-gtk-theme
+git clone https://github.com/vinceliuice/Colloid-icon-theme /home/$USER/tmp/Colloid-icon-theme
+git clone https://github.com/refi64/stylepak /home/$USER/tmp/stylepak
 
 cd /home/$USER/tmp/Colloid-gtk-theme
 ./install.sh --tweaks normal

@@ -23,6 +23,7 @@ alias 'merge'='git merge'
 alias 'status'='git status'
 alias 'checkout'='git checkout'
 alias 'tokei'='tokei --exclude pnpm-lock.yaml'
+alias 'update'='yay -Syyuu --noconfirm --answerdiff=None'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -49,3 +50,10 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 . /opt/asdf-vm/asdf.sh
+
+
+export FLYCTL_INSTALL="/home/vinicius/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
