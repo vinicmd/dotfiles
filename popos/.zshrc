@@ -31,7 +31,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # [[ -s "/home/vinicius/.gvm/scripts/gvm" ]] && source "/home/vinicius/.gvm/scripts/gvm"
 
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/home/vinicius/.local/share/pnpm"
@@ -49,7 +49,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-. /opt/asdf-vm/asdf.sh
+# . /opt/asdf-vm/asdf.sh
 
 
 export FLYCTL_INSTALL="/home/vinicius/.fly"
