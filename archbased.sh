@@ -52,24 +52,19 @@ curl -sS https://starship.rs/install.sh | sh
 
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 if [ -e ~/.zshrc ]; then
     rm ~/.zshrc
 fi
 
-# alacritty theme
-mkdir -p ~/.config/alacritty/themes
-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-
 gh auth login
 
 ln -s ~/dotfiles/arch/.zshrc ~/.zshrc
 ln -s ~/dotfiles/arch/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/arch/.alacritty.toml ~/.alacritty.toml
 
 reboot
