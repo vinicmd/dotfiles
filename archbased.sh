@@ -4,7 +4,7 @@ sudo pacman -Syyuu
 cd ~
 sudo pacman -S base-devel git && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
-yay -S microsoft-edge-stable visual-studio-code-bin tilix flatpak htop exa bat docker wget curl copyq github-cli ostree appstream-glib
+yay -S microsoft-edge-stable visual-studio-code-bin flatpak htop exa bat docker wget curl copyq github-cli ostree appstream-glib
 
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -15,13 +15,13 @@ mkdir -p /home/$USER/tmp
 mkdir /home/$USER/.fonts
 cd /home/$USER/.fonts
 
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf 
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
 
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf 
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
 
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf 
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf 
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
 cd /home/$USER/
 
@@ -62,9 +62,10 @@ if [ -e ~/.zshrc ]; then
     rm ~/.zshrc
 fi
 
-gh auth login
 
 ln -s ~/dotfiles/arch/.zshrc ~/.zshrc
 ln -s ~/dotfiles/arch/.gitconfig ~/.gitconfig
 
-reboot
+gh auth login
+
+echo "Finished!"
