@@ -4,7 +4,7 @@ sudo dnf update -y
 sudo dnf groupinstall "Development Tools" "Development Libraries" -y
 sudo dnf install dnf5-plugins -y
 sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install rustup wget exa curl cmake gcc zsh -y
+sudo dnf install rustup wget curl cmake gcc zsh -y
 sudo dnf install gh --repo gh-cli -y
 
 curl https://sh.rustup.rs -sSf | sh
@@ -34,7 +34,7 @@ gh auth login
 chsh -s /bin/zsh
 
 
-cargo install bat eza
+cargo install bat exa
 
 nvm install --lts
 
